@@ -3,7 +3,6 @@
     <ion-tabs>
       <ion-router-outlet />
 
-      <!-- La barre d'onglets, en bas de l'écran -->
       <ion-tab-bar slot="bottom">
         <ion-tab-button tab="menu" href="/tabs/menu">
           <ion-icon :icon="restaurantOutline" />
@@ -13,7 +12,7 @@
         <ion-tab-button tab="panier" href="/tabs/panier">
           <ion-icon :icon="cartOutline" />
           <ion-label>Panier</ion-label>
-          <ion-badge v-if="nombreArticles > 0">{{ nombreArticles }}</ion-badge>
+          <ion-badge v-if="nombreArticles > 0" color="secondary">{{ nombreArticles }}</ion-badge>
         </ion-tab-button>
 
         <ion-tab-button tab="commandes" href="/tabs/commandes">
@@ -26,18 +25,9 @@
 </template>
 
 <script setup>
-import {
-  IonPage,
-  IonTabs,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonIcon,
-  IonLabel,
-  IonBadge,
-} from "@ionic/vue";
-import { restaurantOutline, cartOutline, receiptOutline } from "ionicons/icons";
-import { usePanier } from "@/composables/usePanier";
+import { IonPage, IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon, IonLabel, IonBadge } from '@ionic/vue';
+import { restaurantOutline, cartOutline, receiptOutline } from 'ionicons/icons';
+import { usePanier } from '@/composables/usePanier';
 
 const { nombreArticles } = usePanier();
 </script>

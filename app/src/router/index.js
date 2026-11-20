@@ -1,23 +1,17 @@
-import { createRouter, createWebHistory } from "@ionic/vue-router";
-import TabsPage from "@/views/TabsPage.vue";
+import { createRouter, createWebHistory } from '@ionic/vue-router';
+import TabsPage from '@/views/TabsPage.vue';
 
 const routes = [
-  { path: "/", redirect: "/tabs/menu" },
+  { path: '/', redirect: '/tabs/menu' },
   {
-    path: "/tabs/",
+    path: '/tabs/',
     component: TabsPage,
     children: [
-      { path: "", redirect: "/tabs/menu" },
-      { path: "menu", component: () => import("@/views/MenuPage.vue") },
-      { path: "panier", component: () => import("@/views/PanierPage.vue") },
-      {
-        path: "commandes",
-        component: () => import("@/views/CommandesPage.vue"),
-      },
-      {
-        path: "menu/:id",
-        component: () => import("@/views/PlatDetailPage.vue"),
-      },
+      { path: '', redirect: '/tabs/menu' },
+      { path: 'menu', component: () => import('@/views/MenuPage.vue') },
+      { path: 'menu/:id', component: () => import('@/views/PlatDetailPage.vue') },
+      { path: 'panier', component: () => import('@/views/PanierPage.vue') },
+      { path: 'commandes', component: () => import('@/views/CommandesPage.vue') },
     ],
   },
 ];
